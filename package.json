@@ -1,0 +1,28 @@
+{
+  "name": "@trenskow/wait",
+  "version": "1.0.0",
+  "description": "A promisified version of `setTimeout`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trenskow/wait.git"
+  },
+  "keywords": [
+    "sleep",
+    "wait",
+    "setTimeout",
+    "promise"
+  ],
+  "author": "Kristian Trenskow <trenskow@me.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trenskow/wait/issues"
+  },
+  "homepage": "https://github.com/trenskow/wait#readme",
+  "dependencies": {
+    "ms": "^2.1.2"
+  }
+}
