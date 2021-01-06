@@ -1,6 +1,7 @@
 'use strict';
 
-const ms = require('ms');
+const
+	{ duration } = require('@trenskow/units');
 
 module.exports = exports = (interval) => {
 
@@ -8,7 +9,7 @@ module.exports = exports = (interval) => {
 	let resolver;
 
 	let result = new Promise((resolve) => {
-		if (typeof interval === 'string') interval = ms(interval);
+		if (typeof interval === 'string') interval = duration.ms(interval);
 		resolver = resolve;
 		timeoutId = setTimeout(resolve, interval);
 	});
