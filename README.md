@@ -23,7 +23,7 @@ You can also cancel the wait before the specified time.
 ````javascript
 const waiter = wait('2s');
 
-setTimeout(waiter.elapse, 1000);
+setTimeout(waiter.cancel, 1000);
 
 await waiter;
 

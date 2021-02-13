@@ -14,10 +14,12 @@ module.exports = exports = (interval) => {
 		timeoutId = setTimeout(resolve, interval);
 	});
 
-	result.elapse = () => {
+	result.cancel = () => {
 		clearTimeout(timeoutId);
 		resolver();
 	};
+
+	result.elapse = result.cancel;
 
 	return result;
 };
