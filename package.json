@@ -1,6 +1,6 @@
 {
   "name": "@trenskow/wait",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A promisified version of `setTimeout`.",
   "main": "index.js",
   "scripts": {
@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/trenskow/wait#readme",
   "dependencies": {
-    "@trenskow/units": "^0.1.1"
+    "@trenskow/units": "^0.1.3"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
+    "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
-    "mocha": "^7.2.0"
+    "mocha": "^9.1.3"
   }
 }
