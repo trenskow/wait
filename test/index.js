@@ -1,10 +1,19 @@
-'use strict';
+//
+// index.js
+// @trenskow/wait
+//
+// Created by Kristian Trenskow on 2023/07/12
+// For license see LICENSE.
+//
 
-require('chai').use(require('chai-as-promised'));
+import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
 
-const { expect } = require('chai');
+import wait from '../index.js';
 
-const wait = require('../');
+const { expect } = chai;
+
+chai.use(chaiAsPromised);
 
 describe('wait', () => {
 	it('should wait one seconds (string).', () => {
@@ -32,5 +41,29 @@ describe('wait', () => {
 				return (new Date()).getTime() - startTime.getTime();
 			}))
 			.to.eventually.be.satisfies((val) => val >= 200 && val <= 250);
+	});
+	it ('delayed function should return the correct value.', () => {
+		const startTime = new Date();
+		return expect(
+			wait(1000).delayed(async () => {
+				return 'Hello, World!';
+			}).then((result) => {
+				expect((new Date()).getTime() - startTime.getTime()).to.satisfies((val) => val >= 1000);
+				return result;
+			}))
+			.to.eventually.equal('Hello, World!');
+
+	});
+	it ('delayed function should throw an error.', () => {
+		const startTime = new Date();
+		return expect(
+			wait(1000).delayed(async () => {
+				throw new Error('This is an error!');
+			}).catch((error) => {
+				expect((new Date()).getTime() - startTime.getTime()).to.satisfies((val) => val >= 1000);
+				throw error;
+			}))
+			.to.eventually.be.rejectedWith('This is an error!');
+
 	});
 });

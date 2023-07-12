@@ -1,9 +1,14 @@
-'use strict';
+//
+// index.js
+// @trenskow/app
+//
+// Created by Kristian Trenskow on 2023/07/12
+// For license see LICENSE.
+//
 
-const
-	{ duration } = require('@trenskow/units');
+import { duration } from '@trenskow/units';
 
-module.exports = exports = (interval) => {
+const wait = (interval) => {
 
 	let timeoutId;
 	let resolver;
@@ -21,5 +26,21 @@ module.exports = exports = (interval) => {
 
 	result.elapse = result.cancel;
 
+	result.delayed = async (todo) => {
+
+		let todoResult = (await Promise.allSettled([
+			Promise.resolve(todo(result.cancel)),
+			result
+		]))[0];
+
+		if (todoResult.status === 'rejected') throw todoResult.reason;
+
+		return todoResult.value;
+
+	};
+
 	return result;
+
 };
+
+export default wait;
