@@ -6,14 +6,12 @@
 // For license see LICENSE.
 //
 
-import chai from 'chai';
+import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 
 import wait from '../index.js';
 
-const { expect } = chai;
-
-chai.use(chaiAsPromised);
+chaiUse(chaiAsPromised);
 
 describe('wait', () => {
 	it('should wait one seconds (string).', () => {
