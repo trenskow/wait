@@ -24,7 +24,7 @@
 	},
 	"homepage": "https://github.com/trenskow/wait#readme",
 	"dependencies": {
-		"@trenskow/units": "^0.1.11"
+		"@trenskow/units": "^0.2.0"
 	},
 	"devDependencies": {
 		"chai": "^5.0.0",
