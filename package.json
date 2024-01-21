@@ -27,7 +27,7 @@
 		"@trenskow/units": "^0.1.9"
 	},
 	"devDependencies": {
-		"chai": "^4.4.1",
+		"chai": "^5.0.0",
 		"chai-as-promised": "^7.1.1",
 		"eslint": "^8.56.0",
 		"mocha": "^10.2.0"
