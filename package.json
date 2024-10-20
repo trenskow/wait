@@ -24,7 +24,7 @@
 	},
 	"homepage": "https://github.com/trenskow/wait#readme",
 	"dependencies": {
-		"@trenskow/units": "^0.2.5"
+		"@trenskow/units": "^0.2.6"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.1.0",
