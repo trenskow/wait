@@ -1,6 +1,6 @@
 {
 	"name": "@trenskow/wait",
-	"version": "1.3.40",
+	"version": "1.3.41",
 	"description": "A promisified version of `setTimeout`.",
 	"main": "index.js",
 	"type": "module",
