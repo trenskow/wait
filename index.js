@@ -1,6 +1,6 @@
 //
 // index.js
-// @trenskow/app
+// @trenskow/wait
 //
 // Created by Kristian Trenskow on 2023/07/12
 // For license see LICENSE.
